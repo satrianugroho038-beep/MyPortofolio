@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StriaDMG</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- PARTICLE BACKGROUND -->
+<div id="particles-js"></div>
+
+<!-- NAVBAR -->
+<header>
+  <h1 class="logo">StriaDMG</h1>
+
+  <nav id="nav">
+
+  <a href="#home" class="nav-link">Home</a>
+  <a href="#about" class="nav-link">About</a>
+  <a href="#services" class="nav-link">Services</a>
+
+  <!-- MEGA MENU PROJECT -->
+  <div class="mega-dropdown">
+    <button class="nav-link mega-btn" onclick="toggleMegaMenu()">Project ⌄</button>
+
+    <div class="mega-menu" id="megaMenu">
+      
+      <div class="mega-column">
+        <h3>Website</h3>
+        <a href="#">Portfolio</a>
+        <a href="#">Landing Page</a>
+        <a href="#">Company Profile</a>
+      </div>
+
+      <div class="mega-column">
+        <h3>Design</h3>
+        <a href="#">UI Design</a>
+        <a href="#">Mobile App</a>
+        <a href="#">Dashboard</a>
+      </div>
+
+      <div class="mega-column">
+        <h3>Game</h3>
+        <a href="#">HTML Game</a>
+        <a href="#">Roblox</a>
+        <a href="#">Unity</a>
+      </div>
+
+    </div>
+  </div>
+
+  <a href="#contact" class="nav-link">Contact</a>
+
+</nav>
+
+  <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+</header>
+
+<!-- HERO -->
+<section id="home" class="hero">
+  <h2>Halo, Saya StriaDMG 👋</h2>
+  <p>ini Website Developer & Designer sederhana saya</p>
+  <button onclick="scrollToSection('about')">Lihat Selengkapnya</button>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-container">
+
+    <!-- TEXT -->
+    <div class="about-text">
+      <h2>About Me</h2>
+      <p>
+        Saya sedang belajar untuk menjadi developer yang fokus membuat website modern,
+        aesthetic, dan premium dengan pengalaman user yang smooth
+        dan elegan.
+      </p>
+      <button class="about-btn">Explore More</button>
+    </div>
+
+    <!-- IMAGE -->
+    <div class="about-image">
+      <img src="https://picsum.photos/500/400" alt="about">
+    </div>
+
+  </div>
+</section>
+
+<!-- TAMPILAN PROJECT -->
+<section id="project-dashboard" class="ui-section">
+
+  <h2 class="ui-title">Project Dashboard</h2>
+
+  <!-- CONTROLS -->
+  <div class="pd-controls">
+
+    <input type="text" id="pdSearch" placeholder="Search project...">
+
+    <div class="pd-filters">
+      <button onclick="filterProjects('all')">All</button>
+      <button onclick="filterProjects('progress')">Progress</button>
+      <button onclick="filterProjects('done')">Done</button>
+    </div>
+
+  </div>
+
+  <!-- GRID -->
+  <div class="pd-grid">
+
+    <!-- CARD -->
+    <div class="pd-card progress">
+      <img src="https://picsum.photos/400/250?random=1">
+      <div class="pd-body">
+        <span class="pd-badge progress">In Progress</span>
+        <h3>Portfolio Website</h3>
+        <p>UI Apple style + animation system.</p>
+        <a href="https://example.com" target="_blank">Open Project</a>
+      </div>
+    </div>
+
+    <div class="pd-card done">
+      <img src="https://picsum.photos/400/250?random=2">
+      <div class="pd-body">
+        <span class="pd-badge done">Done</span>
+        <h3>Landing Page</h3>
+        <p>Modern responsive landing page.</p>
+        <a href="https://example.com" target="_blank">Open Project</a>
+      </div>
+    </div>
+
+    <div class="pd-card progress">
+      <img src="https://picsum.photos/400/250?random=3">
+      <div class="pd-body">
+        <span class="pd-badge progress">In Progress</span>
+        <h3>Game UI</h3>
+        <p>Mini HTML game dashboard system.</p>
+        <a href="https://example.com" target="_blank">Open Project</a>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <h2 class="section-title">Services</h2>
+
+  <div class="services-container">
+
+    <div class="service-card">
+      <div class="icon">💻</div>
+      <h3>Website Design</h3>
+      <p>Desain website modern, cepat, dan responsive.</p>
+    </div>
+
+    <div class="service-card">
+      <div class="icon">🎨</div>
+      <h3>UI/UX</h3>
+      <p>Desain interface yang clean dan user friendly.</p>
+    </div>
+
+    <div class="service-card">
+      <div class="icon">🎮</div>
+      <h3>Game Dev</h3>
+      <p>Membuat game HTML interaktif dan seru.</p>
+    </div>
+
+  </div>
+</section>
+
+<!--GAMING-->
+<section id="steam-app">
+
+  <!-- SIDEBAR -->
+  <div class="steam-sidebar">
+    <h2>GameOS</h2>
+
+    <a onclick="filterGame('all')">🏠 Library</a>
+    <a onclick="filterGame('installed')">📦 Installed</a>
+    <a onclick="filterGame('online')">🌐 Online</a>
+    <a onclick="filterGame('offline')">⚫ Offline</a>
+  </div>
+
+  <!-- MAIN -->
+  <div class="steam-main">
+
+    <div class="steam-top">
+      <input type="text" id="gameSearch" placeholder="Search games...">
+    </div>
+
+    <div class="steam-grid">
+
+      <div class="steam-card installed online">
+        <img src="https://picsum.photos/400/250?random=20">
+        <div class="steam-body">
+          <h3>Roblox</h3>
+          <p>Open world creation</p>
+
+          <div class="steam-status online">Online</div>
+          <button>Play</button>
+        </div>
+      </div>
+
+      <div class="steam-card installed offline">
+        <img src="https://picsum.photos/400/250?random=21">
+        <div class="steam-body">
+          <h3>Minecraft</h3>
+          <p>Survival sandbox</p>
+
+          <div class="steam-status offline">Offline</div>
+          <button>Launch</button>
+        </div>
+      </div>
+
+      <div class="steam-card online">
+        <img src="https://picsum.photos/400/250?random=22">
+        <div class="steam-body">
+          <h3>Valorant</h3>
+          <p>Competitive FPS</p>
+
+          <div class="steam-status online">Online</div>
+          <button>Play</button>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- CONTACT -->
+<div class="contact-glass reveal">
+
+  <div class="contact-header">
+    <h2>Kontak Whatsapp saya</h2>
+
+    <span class="queue">
+      Antrian: <b id="queueNumber">0</b>
+    </span>
+  </div>
+
+  <div class="contact-content">
+
+    <!-- AVATAR -->
+    <div class="contact-avatar">
+      <img src="https://i.pravatar.cc/150?img=12" alt="avatar">
+    </div>
+
+    <!-- TEXT -->
+    <div class="contact-info">
+      <p class="contact-quote">
+        "Jangan malu bertanya, jika malu akan tersesat di jalan"
+      </p>
+
+      <div class="contact-action">
+        <a href="https://wa.me/6281586827829" target="_blank">
+          <button>💬 Hubungi Saya</button>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p>Terimakasih, sudah datang di website sederhana saya salam hangat dari saya StriaDMG</p>
+</footer>
+
+<!-- PARTICLE LIB -->
+<script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+
+<!-- JS -->
+<script src="script.js"></script>
+
+</body>
+</html>
